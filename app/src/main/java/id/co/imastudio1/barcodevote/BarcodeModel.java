@@ -49,13 +49,13 @@ public class BarcodeModel {
     private String pasfoto;
     @SerializedName("registrasi")
     @Expose
-    private Integer registrasi;
+    private String registrasi;
     @SerializedName("sertifikat")
     @Expose
-    private Integer sertifikat;
+    private String sertifikat;
     @SerializedName("seminar_kit")
     @Expose
-    private Integer seminarKit;
+    private String seminarKit;
 
     public String getNo() {
         return no;
@@ -161,27 +161,27 @@ public class BarcodeModel {
         this.pasfoto = pasfoto;
     }
 
-    public Integer getRegistrasi() {
+    public String getRegistrasi() {
         return registrasi;
     }
 
-    public void setRegistrasi(Integer registrasi) {
+    public void setRegistrasi(String registrasi) {
         this.registrasi = registrasi;
     }
 
-    public Integer getSertifikat() {
+    public String getSertifikat() {
         return sertifikat;
     }
 
-    public void setSertifikat(Integer sertifikat) {
+    public void setSertifikat(String sertifikat) {
         this.sertifikat = sertifikat;
     }
 
-    public Integer getSeminarKit() {
+    public String getSeminarKit() {
         return seminarKit;
     }
 
-    public void setSeminarKit(Integer seminarKit) {
+    public void setSeminarKit(String seminarKit) {
         this.seminarKit = seminarKit;
     }
 }
