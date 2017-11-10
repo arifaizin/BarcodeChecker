@@ -30,7 +30,10 @@ public class DataActivity extends AppCompatActivity {
     public static final String DATA_NAMA = "nama";
     public static final String DATA_FOTO = "foto";
     public static final String DATA_MENU = "menu";
-    private static final String ID_SHEET = "1Ds_P7-PAFD4RuV9aG-EHJbsyJ7CiKK13BxzJca-fGCo";
+    public static final String DATA_REG = "Registrasi";
+    public static final String DATA_CERT = "Sertifikat";
+    public static final String DATA_KIT = "Seminar Kit";
+    public static final String ID_SHEET = "1Ds_P7-PAFD4RuV9aG-EHJbsyJ7CiKK13BxzJca-fGCo";
     private TextView tvDataNama;
     private TextView tvDataId;
     private ImageView ivDataFoto;
@@ -82,11 +85,11 @@ public class DataActivity extends AppCompatActivity {
         ApiService api = Client.getApiService();
 //        Call call = api.updatedataReg(ID_SHEET, dataid, "1");
 //        Call call = null;
-        if (datamenu.equals("reg")) {
+        if (datamenu.equals(DATA_REG)) {
             call = api.updatedataReg(ID_SHEET, dataid, "1");
-        } else if (datamenu.equals("cert")) {
+        } else if (datamenu.equals(DATA_CERT)) {
             call = api.updatedataCert(ID_SHEET, dataid, "1");
-        } else if (datamenu.equals("kit")) {
+        } else if (datamenu.equals(DATA_KIT)) {
             call = api.updatedataKit(ID_SHEET, dataid, "1");
         }
         call.enqueue(new Callback<Void>() {

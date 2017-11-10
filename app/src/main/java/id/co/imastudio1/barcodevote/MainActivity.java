@@ -37,10 +37,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static id.co.imastudio1.barcodevote.DataActivity.DATA_CERT;
 import static id.co.imastudio1.barcodevote.DataActivity.DATA_FOTO;
 import static id.co.imastudio1.barcodevote.DataActivity.DATA_ID;
+import static id.co.imastudio1.barcodevote.DataActivity.DATA_KIT;
 import static id.co.imastudio1.barcodevote.DataActivity.DATA_MENU;
 import static id.co.imastudio1.barcodevote.DataActivity.DATA_NAMA;
+import static id.co.imastudio1.barcodevote.DataActivity.DATA_REG;
 
 public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
@@ -186,13 +189,13 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 dataId = arrayListData.get(i).getId();
 
 
-                if (menu.equals("reg")) {
+                if (menu.equals(DATA_REG)) {
                     String dataygdiambil = arrayListData.get(i).getRegistrasi();
                     tampilkanDialog(dataygdiambil, i, dataReg, dataCert, dataKit);
-                } else if (menu.equals("cert")) {
+                } else if (menu.equals(DATA_CERT)) {
                     String dataygdiambil = arrayListData.get(i).getSertifikat();
                     tampilkanDialog(dataygdiambil, i, dataReg, dataCert, dataKit);
-                } else if (menu.equals("kit")) {
+                } else if (menu.equals(DATA_KIT)) {
                     String dataygdiambil = arrayListData.get(i).getSeminarKit();
                     tampilkanDialog(dataygdiambil, i, dataReg, dataCert, dataKit);
                 }
@@ -301,11 +304,11 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         ApiService api = Client.getApiService();
 //        Call call = api.updatedataReg(ID_SHEET, dataid, "1");
 //        Call call = null;
-        if (menu.equals("reg")) {
+        if (menu.equals(DATA_REG)) {
             call = api.updatedataReg(ID_SHEET, dataid, "1");
-        } else if (menu.equals("cert")) {
+        } else if (menu.equals(DATA_CERT)) {
             call = api.updatedataCert(ID_SHEET, dataid, "1");
-        } else if (menu.equals("kit")) {
+        } else if (menu.equals(DATA_KIT)) {
             call = api.updatedataKit(ID_SHEET, dataid, "1");
         }
         call.enqueue(new Callback<Void>() {
@@ -409,7 +412,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_manual) {
             return true;
         }
 

@@ -126,7 +126,7 @@
                     android:layout_margin="4dp"
                     android:layout_weight="1"
                     android:background="@color/colorPrimaryDark"
-                    android:text="Scan lagi"
+                    android:text="Kembali"
                     android:textColor="@android:color/white" />
 
                 <Button
